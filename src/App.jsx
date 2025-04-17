@@ -31,7 +31,7 @@ const App = () => {
   };
   return (
     <div className={ligthMode ? "dark" : ""}>
-      <div className="dark:bg-[linear-gradient(180deg,#040918_0%,#091540_100%)] bg-[var(--Neutral-200)] min-h-[100vh]  flex justify-center ">
+      <div className="[background-image:linear-gradient(180deg,_#EBF2FC_0%,_#EEF8F9_100%)] dark:[background-image:linear-gradient(180deg,#040918_0%,#091540_100%)] bg- min-h-[100vh]  flex justify-center ">
         <div className="w-[90%] lg:max-w-[1440px] h-[100%] flex flex-col gap-[2rem] mt-5.5 mb-11 ">
           <div className="w-full dark:bg-[var(--Neutral-800)] bg-[var(--Neutral-0)]  border-[var(--Neutral-700)] flex flex-row justify-between items-center px-2.5 py-1.5 rounded-lg  ">
             <img
@@ -40,7 +40,7 @@ const App = () => {
               className="h-[30px] w-auto "
             />
             <button
-              className="p-2 border rounded-lg cursor-pointer "
+              className="p-2 rounded-lg cursor-pointer dark:bg-[var(--Neutral-700)] bg-[var(--Neutral-300)] "
               onClick={() => toggleLigthMode()}
             >
               {ligthMode ? (
@@ -71,7 +71,9 @@ function Extention({ extensions, active, inActive, toggleExtension }) {
   return (
     <div className="flex flex-col gap-[1.5rem] ">
       <div className="flex lg:flex-row flex-col gap-3  justify-between items-center ">
-        <h1 className="text-4xl text-amber-50 font-bold">Extension List</h1>
+        <h1 className="text-4xl dark:text-[var(--Neutral-0)] text-[var(--Neutral-900)]  font-bold">
+          Extension List
+        </h1>
         <ExtentionTab activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
       {contextList.map((contextList, i) => {
@@ -102,11 +104,11 @@ function ExtentionList({ extensions, toggleExtension }) {
 
 function ExtentionCard({ data, toggleExtension }) {
   return (
-    <li className="min-w-[300px] border-1 border-[var(--Neutral-700)] h-[160px] bg-[var(--Neutral-800)] text-[var(--Neutral-300)] rounded-2xl p-3.5 flex flex-col justify-between">
+    <li className="min-w-[300px] shadow-lg   h-[160px] dark:bg-[var(--Neutral-800)] bg-[var(--Neutral-0)] dark:text-[var(--Neutral-300)] text-[var(--Neutral-800)] rounded-2xl p-3.5 flex flex-col justify-between">
       <div className=" flex flex-row gap-3 items-start">
         <img src={data.logo} alt={data.name} className="w-[50px] h-[50px] " />
         <div>
-          <p className="font-bold">{data.name} </p>
+          <p className="font-bold ">{data.name} </p>
           <p className="text-sm/4  ">{data.description}</p>
         </div>
       </div>
